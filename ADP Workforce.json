@@ -13,7 +13,6 @@
                             "path": "/hr/v2/worker-demographics"
                         },
                         "query_parameters": {
-                            "customer": "my_customer"
                         }
                     }
                 },
@@ -363,7 +362,6 @@
         "config": {
             "baseUrl": "https://{tenantId}",
             "get": {
-                "maxPageCount": 999,
                 "query_parameters": {}
             },
             "authentication": "certificate",
