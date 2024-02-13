@@ -4,13 +4,16 @@
             "path": ""
         },
         "crud_objects": {
-            "persons": {
+            "worker_demographics": {
                 "operations": {
-                    "personsList": {
+                    "worker_demographicsList": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
                             "path": "/hr/v2/worker-demographics"
+                        },
+                        "processing_options": {
+                            "output_field": "workers"
                         },
                         "query_parameters": {
                         }
@@ -23,7 +26,11 @@
                       "idValue": "_:string*"
                     },
                     "person": {
-                      "preferredName": "_:string*",
+                      "preferredName": {
+                            "givenName":"_:string*",
+                            "middleName":"_:string*",
+                            "familyName1":"_:string*"
+                       },
                       "militaryClassificationCodes": "_:string*",
                       "customFieldGroup": {
                         "codeFields": [
@@ -360,20 +367,30 @@
     },
     "rest": {
         "config": {
-            "baseUrl": "https://{tenantId}",
-            "get": {
-                "query_parameters": {}
+          "baseUrl": "https://{tenant_id}",
+          "get": {
+            "query_parameters": {
             },
-            "authentication": "certificate",
-            "call_handling": "generic",
-            "test_connection": {
-                "url": "/hr/v2/worker-demographics"
+            "pagination": {
+                "mode": "skip_take",
+                "path":[],
+                "page_size":"{page_size}",
+                "params":{
+                    "$top":"{take_count}",
+                    "$skip":"{skip_count}"
+                }
             }
+          },
+          "authentication": "client_credentials",
+          "call_handling": "generic",
+          "test_connection": {
+            "url": "/hr/v2/worker-demographics?top=1&skip=0"
+          }
         },
         "authOptions": {
-            "scopes": [],
-            "authUrl": "https://{tenantId}/auth/oauth/v2/token",
-            "type": "signed-jwt",
+          "scopes": [],
+          "authUrl": "https://{tenant_id}/auth/oauth/v2/token",
+          "type": "signed-jwt",
             "postData": {
                 "client_id": {
                     "name": "clientId"
@@ -408,5 +425,15 @@
                 }
             }
         }
+    },
+    "connection": {
+        "items": [
+            {
+                "name": "page_size",
+                "type": "textbox",
+                "label": "Page Size",
+                "value": "100"
+            }
+        ]
     }
 }
