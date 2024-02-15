@@ -1,439 +1,634 @@
 {
-    "schema": {
-        "options": {
-            "path": ""
-        },
-        "crud_objects": {
-            "worker_demographics": {
-                "operations": {
-                    "worker_demographicsList": {
-                        "method": "get",
-                        "call": {
-                            "mode": "normal",
-                            "path": "/hr/v2/worker-demographics"
-                        },
-                        "processing_options": {
-                            "output_field": "workers"
-                        },
-                        "query_parameters": {
-                        }
-                    }
-                },
-                "key": "id",
-                "resources": {
-                    "associateOID": "string*",
-                    "workerID": {
-                      "idValue": "_:string*"
-                    },
-                    "person": {
-                      "preferredName": {
-                            "givenName":"_:string*",
-                            "middleName":"_:string*",
-                            "familyName1":"_:string*"
-                       },
-                      "militaryClassificationCodes": "_:string*",
-                      "customFieldGroup": {
-                        "codeFields": [
-                          {
-                            "itemID": "string*",
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            },
-                            "codeValue": "string*",
-                            "shortName": "string*"
-                          }
-                        ],
-                        "dateFields": [
-                          {
-                            "itemID": "string*",
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "longName": "_:string*"
-                            }
-                          }
-                        ],
-                        "indicatorFields": [
-                          {
-                            "itemID": "string*",
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            },
-                            "indicatorValue": "boolean*"
-                          }
-                        ],
-                        "stringFields": [
-                          {
-                            "itemID": "string*",
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            },
-                            "stringValue": "string*"
-                          }
-                        ],
-                        "multiCodeFields": [
-                          {
-                            "itemID": "string*",
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            },
-                            "codes": "string*"
-                          }
-                        ]
-                      },
-                      "legalName": {
-                        "givenName": "_:string*",
-                        "middleName": "_:string*",
-                        "familyName1": "_:string*",
-                        "formattedName": "_:string*"
-                      },
-                      "legalAddress": {
-                        "nameCode": {
-                          "codeValue": "_:string*",
-                          "shortName": "_:string*",
-                          "longName": "_:string*"
-                        },
-                        "lineOne": "string*",
-                        "cityName": "string*",
-                        "countrySubdivisionLevel1": {
-                          "subdivisionType": "_:string*",
-                          "codeValue": "_:string*",
-                          "shortName": "_:string*"
-                        },
-                        "countrySubdivisionLevel2": {
-                          "subdivisionType": "_:string*",
-                          "codeValue": "_:string*",
-                          "shortName": "_:string*"
-                        },
-                        "countryCode": "string*",
-                        "postalCode": "string*"
-                      },
-                      "communication": {
-                        "mobiles": [
-                          {
-                            "itemID": "string*",
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            },
-                            "countryDialing": "string*",
-                            "areaDialing": "string*",
-                            "dialNumber": "string*",
-                            "access": "string*",
-                            "formattedNumber": "string*"
-                          }
-                        ],
-                        "emails": [
-                          {
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            },
-                            "emailUri": "string*",
-                            "notificationIndicator": "boolean*"
-                          }
-                        ]
-                      }
-                    },
-                    "workerDates": {
-                      "originalHireDate": "string*"
-                    },
-                    "workerStatus": {
-                      "statusCode": {
-                        "codeValue": "_:string*"
-                      }
-                    },
-                    "businessCommunication": {
-                      "landlines": [
-                        {
-                          "itemID": "string*",
-                          "nameCode": {
-                            "codeValue": "_:string*",
-                            "shortName": "_:string*"
-                          },
-                          "countryDialing": "string*",
-                          "areaDialing": "string*",
-                          "dialNumber": "string*",
-                          "access": "string*",
-                          "formattedNumber": "string*"
-                        }
-                      ],
-                      "mobiles": [
-                        {
-                          "itemID": "string*",
-                          "nameCode": {
-                            "codeValue": "_:string*",
-                            "shortName": "_:string*"
-                          },
-                          "countryDialing": "string*",
-                          "areaDialing": "string*",
-                          "dialNumber": "string*",
-                          "access": "string*",
-                          "formattedNumber": "string*"
-                        }
-                      ],
-                      "emails": [
-                        {
-                          "itemID": "string*",
-                          "nameCode": {
-                            "codeValue": "_:string*",
-                            "shortName": "_:string*"
-                          },
-                          "emailUri": "string*",
-                          "notificationIndicator": "boolean*"
-                        }
-                      ]
-                    },
-                    "workAssignments": [
-                      {
-                        "itemID": "string*",
-                        "primaryIndicator": "boolean*",
-                        "hireDate": "string*",
-                        "actualStartDate": "string*",
-                        "assignmentStatus": {
-                          "statusCode": {
-                            "codeValue": "_:string*",
-                            "shortName": "_:string*",
-                            "longName": "_:string*"
-                          },
-                          "reasonCode": {
-                            "codeValue": "_:string*",
-                            "shortName": "_:string*"
-                          },
-                          "effectiveDate": "string*"
-                        },
-                        "workerTypeCode": {
-                          "codeValue": "_:string*",
-                          "shortName": "_:string*"
-                        },
-                        "workerGroups": [
-                          {
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "longName": "_:string*"
-                            },
-                            "groupCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            }
-                          }
-                        ],
-                        "jobCode": {
-                          "codeValue": "_:string*",
-                          "longName": "_:string*"
-                        },
-                        "jobTitle": "string*",
-                        "occupationalClassifications": [
-                          {
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            },
-                            "classificationCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            }
-                          }
-                        ],
-                        "wageLawCoverage": {
-                          "wageLawNameCode": {
-                            "codeValue": "_:string*",
-                            "longName": "_:string*"
-                          },
-                          "coverageCode": {
-                            "codeValue": "_:string*",
-                            "shortName": "_:string*"
-                          }
-                        },
-                        "positionID": "string*",
-                        "homeOrganizationalUnits": [
-                          {
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            },
-                            "typeCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            }
-                          }
-                        ],
-                        "assignedOrganizationalUnits": [
-                          {
-                            "nameCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            },
-                            "typeCode": {
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            }
-                          }
-                        ],
-                        "homeWorkLocation": {
-                          "address": {
-                            "lineOne": "string*",
-                            "lineTwo": "string*",
-                            "cityName": "string*",
-                            "countrySubdivisionLevel1": {
-                              "subdivisionType": "_:string*",
-                              "codeValue": "_:string*",
-                              "shortName": "_:string*"
-                            },
-                            "countryCode": "string*",
-                            "postalCode": "string*"
-                          },
-                          "nameCode": {
-                            "codeValue": "_:string*",
-                            "shortName": "_:string*"
-                          }
-                        },
-                        "assignedWorkLocations": [
-                          {
-                            "address": {
-                              "nameCode": {
-                                "codeValue": "_:string*",
-                                "shortName": "_:string*",
-                                "longName": "_:string*"
-                              },
-                              "lineOne": "string*",
-                              "lineTwo": "string*",
-                              "cityName": "string*",
-                              "countrySubdivisionLevel1": {
-                                "subdivisionType": "_:string*",
-                                "codeValue": "_:string*",
-                                "shortName": "_:string*"
-                              },
-                              "countrySubdivisionLevel2": {
-                                "subdivisionType": "_:string*",
-                                "codeValue": "_:string*",
-                                "shortName": "_:string*"
-                              },
-                              "countryCode": "string*",
-                              "postalCode": "string*"
-                            }
-                          }
-                        ],
-                        "reportsTo": [
-                          {
-                            "positionID": "string*",
-                            "associateOID": "string*",
-                            "workerID": {
-                              "idValue": "_:string*"
-                            },
-                            "reportsToWorkerName": {
-                              "formattedName": "_:string*"
-                            }
-                          }
-                        ],
-                        "payrollProcessingStatusCode": {
-                          "shortName": "_:string*"
-                        },
-                        "payrollGroupCode": "string*",
-                        "payrollFileNumber": "string*",
-                        "payGradeCode": {
-                          "codeValue": "_:string*",
-                          "shortName": "_:string*"
-                        }
-                      }
-                    ],
-                    "customFieldGroup": {
-                      "dateFields": [
-                        {
-                          "itemID": "string*",
-                          "nameCode": {
-                            "codeValue": "_:string*",
-                            "longName": "_:string*"
-                          }
-                        }
-                      ],
-                      "stringFields": [
-                        {
-                          "itemID": "string*",
-                          "nameCode": {
-                            "codeValue": "_:string*",
-                            "shortName": "_:string*"
-                          }
-                        }
-                      ]
-                    }
-                  }
-                  
-            }
-        }
+  "schema": {
+    "options": {
+      "path": ""
     },
-    "rest": {
-        "config": {
-          "baseUrl": "https://{tenant_id}",
-          "get": {
-            "query_parameters": {
+    "crud_objects": {
+      "worker_demographics": {
+        "operations": {
+          "worker_demographicsList": {
+            "method": "get",
+            "call": {
+              "mode": "normal",
+              "path": "/hr/v2/worker-demographics"
             },
-            "pagination": {
-                "mode": "skip_take",
-                "path":[],
-                "page_size":"{page_size}",
-                "params":{
-                    "$top":"{take_count}",
-                    "$skip":"{skip_count}"
-                }
-            }
-          },
-          "authentication": "client_credentials",
-          "call_handling": "generic",
-          "test_connection": {
-            "url": "/hr/v2/worker-demographics?top=1&skip=0"
+            "processing_options": {
+              "output_field": "workers"
+            },
+            "query_parameters": {}
           }
         },
-        "authOptions": {
-          "scopes": [],
-          "authUrl": "https://{tenant_id}/auth/oauth/v2/token",
-          "type": "signed-jwt",
-            "postData": {
-                "client_id": {
-                    "name": "clientId"
-                },
-                "scope": {
-                    "name": "scope"
-                },
-                "client_assertion_type": "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
-                "client_assertion": {
-                    "name": "JWT"
-                },
-                "grant_type": "client_credentials"
+        "key": "associateOID",
+        "resources": {
+          "associateOID": "string*",
+          "workerID": {
+            "idValue": "_:string*"
+          },
+          "person": {
+            "preferredName": {
+              "givenName": "_:string*",
+              "middleName": "_:string*",
+              "familyName1": "_:string*"
             },
-            "JWT": {
-                "aud": {
-                    "name": "endpoint"
-                },
-                "exp": {
-                    "name": "oneHour"
-                },
-                "iss": {
-                    "name": "clientId"
-                },
-                "jti": {
-                    "name": "guid"
-                },
-                "nbf": {
-                    "name": "now"
-                },
-                "sub": {
-                    "name": "clientId"
+            "militaryClassificationCodes": "_:string*",
+            "customFieldGroup": {
+              "codeFields": [
+                {
+                  "itemID": "string*",
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "codeValue": "string*",
+                  "shortName": "string*"
                 }
+              ],
+              "dateFields": [
+                {
+                  "itemID": "string*",
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "longName": "_:string*"
+                  }
+                }
+              ],
+              "indicatorFields": [
+                {
+                  "itemID": "string*",
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "indicatorValue": "boolean*"
+                }
+              ],
+              "stringFields": [
+                {
+                  "itemID": "string*",
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "stringValue": "string*"
+                }
+              ],
+              "multiCodeFields": [
+                {
+                  "itemID": "string*",
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "codes": "string"
+                }
+              ]
+            },
+            "legalName": {
+              "givenName": "_:string*",
+              "middleName": "_:string*",
+              "familyName1": "_:string*",
+              "formattedName": "_:string*"
+            },
+            "legalAddress": {
+              "nameCode": {
+                "codeValue": "_:string*",
+                "shortName": "_:string*",
+                "longName": "_:string*"
+              },
+              "lineOne": "string*",
+              "cityName": "string*",
+              "countrySubdivisionLevel1": {
+                "subdivisionType": "_:string*",
+                "codeValue": "_:string*",
+                "shortName": "_:string*"
+              },
+              "countrySubdivisionLevel2": {
+                "subdivisionType": "_:string*",
+                "codeValue": "_:string*",
+                "shortName": "_:string*"
+              },
+              "countryCode": "string*",
+              "postalCode": "string*"
+            },
+            "communication": {
+              "mobiles": [
+                {
+                  "itemID": "string*",
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "countryDialing": "string*",
+                  "areaDialing": "string*",
+                  "dialNumber": "string*",
+                  "access": "string*",
+                  "formattedNumber": "string*"
+                }
+              ],
+              "emails": [
+                {
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "emailUri": "string*",
+                  "notificationIndicator": "boolean*"
+                }
+              ]
             }
-        }
-    },
-    "connection": {
-        "items": [
+          },
+          "workerDates": {
+            "originalHireDate": "string*"
+          },
+          "workerStatus": {
+            "statusCode": {
+              "codeValue": "_:string*"
+            }
+          },
+          "businessCommunication": {
+            "landlines": [
+              {
+                "itemID": "string*",
+                "nameCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*"
+                },
+                "countryDialing": "string*",
+                "areaDialing": "string*",
+                "dialNumber": "string*",
+                "access": "string*",
+                "formattedNumber": "string*"
+              }
+            ],
+            "mobiles": [
+              {
+                "itemID": "string*",
+                "nameCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*"
+                },
+                "countryDialing": "string*",
+                "areaDialing": "string*",
+                "dialNumber": "string*",
+                "access": "string*",
+                "formattedNumber": "string*"
+              }
+            ],
+            "emails": [
+              {
+                "itemID": "string*",
+                "nameCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*"
+                },
+                "emailUri": "string*",
+                "notificationIndicator": "boolean*"
+              }
+            ]
+          },
+          "workAssignments": [
             {
-                "name": "page_size",
-                "type": "textbox",
-                "label": "Page Size",
-                "value": "100"
+              "itemID": "string*",
+              "primaryIndicator": "boolean*",
+              "hireDate": "string*",
+              "actualStartDate": "string*",
+              "assignmentStatus": {
+                "statusCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*",
+                  "longName": "_:string*"
+                },
+                "reasonCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*"
+                },
+                "effectiveDate": "string*"
+              },
+              "workerTypeCode": {
+                "codeValue": "_:string*",
+                "shortName": "_:string*"
+              },
+              "workerGroups": [
+                {
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "longName": "_:string*"
+                  },
+                  "groupCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  }
+                }
+              ],
+              "jobCode": {
+                "codeValue": "_:string*",
+                "longName": "_:string*"
+              },
+              "jobTitle": "string*",
+              "occupationalClassifications": [
+                {
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "classificationCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  }
+                }
+              ],
+              "wageLawCoverage": {
+                "wageLawNameCode": {
+                  "codeValue": "_:string*",
+                  "longName": "_:string*"
+                },
+                "coverageCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*"
+                }
+              },
+              "positionID": "string*",
+              "homeOrganizationalUnits": [
+                {
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "typeCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  }
+                }
+              ],
+              "assignedOrganizationalUnits": [
+                {
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "typeCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  }
+                }
+              ],
+              "homeWorkLocation": {
+                "address": {
+                  "lineOne": "string*",
+                  "lineTwo": "string*",
+                  "cityName": "string*",
+                  "countrySubdivisionLevel1": {
+                    "subdivisionType": "_:string*",
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "countryCode": "string*",
+                  "postalCode": "string*"
+                },
+                "nameCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*"
+                }
+              },
+              "assignedWorkLocations": [
+                {
+                  "address": {
+                    "nameCode": {
+                      "codeValue": "_:string*",
+                      "shortName": "_:string*",
+                      "longName": "_:string*"
+                    },
+                    "lineOne": "string*",
+                    "lineTwo": "string*",
+                    "cityName": "string*",
+                    "countrySubdivisionLevel1": {
+                      "subdivisionType": "_:string*",
+                      "codeValue": "_:string*",
+                      "shortName": "_:string*"
+                    },
+                    "countrySubdivisionLevel2": {
+                      "subdivisionType": "_:string*",
+                      "codeValue": "_:string*",
+                      "shortName": "_:string*"
+                    },
+                    "countryCode": "string*",
+                    "postalCode": "string*"
+                  }
+                }
+              ],
+              "reportsTo": [
+                {
+                  "positionID": "string*",
+                  "associateOID": "string*",
+                  "workerID": {
+                    "idValue": "_:string*"
+                  },
+                  "reportsToWorkerName": {
+                    "formattedName": "_:string*"
+                  }
+                }
+              ],
+              "payrollProcessingStatusCode": {
+                "shortName": "_:string*"
+              },
+              "payrollGroupCode": "string*",
+              "payrollFileNumber": "string*",
+              "payGradeCode": {
+                "codeValue": "_:string*",
+                "shortName": "_:string*"
+              }
             }
-        ]
+          ],
+          "customFieldGroup": {
+            "dateFields": [
+              {
+                "itemID": "string*",
+                "nameCode": {
+                  "codeValue": "_:string*",
+                  "longName": "_:string*"
+                }
+              }
+            ],
+            "stringFields": [
+              {
+                "itemID": "string*",
+                "nameCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "worker_assignments": {
+        "operations": {
+          "worker_assignmentsList": {
+            "method": "get",
+            "call": {
+              "mode": "iteration",
+              "table": "worker_demographics",
+              "iterator": "associateOID",
+              "path": "/hr/v2/worker-demographics/{iterator}",
+              "base": {
+                "associateOID": "{iterator}"
+              }
+            },
+            "processing_options": {
+              "output_field": "workers.0.workAssignments"
+            },
+            "query_parameters": {},
+            "maxSessionCount": 10
+          }
+        },
+        "key": "itemID",
+        "resources": {
+              "associateOID": "string*",
+              "itemID": "string*",
+              "primaryIndicator": "boolean*",
+              "hireDate": "string*",
+              "actualStartDate": "string*",
+              "assignmentStatus": {
+                "statusCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*",
+                  "longName": "_:string*"
+                },
+                "reasonCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*"
+                },
+                "effectiveDate": "string*"
+              },
+              "workerTypeCode": {
+                "codeValue": "_:string*",
+                "shortName": "_:string*"
+              },
+              "workerGroups": [
+                {
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "longName": "_:string*"
+                  },
+                  "groupCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  }
+                }
+              ],
+              "jobCode": {
+                "codeValue": "_:string*",
+                "longName": "_:string*"
+              },
+              "jobTitle": "string*",
+              "occupationalClassifications": [
+                {
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "classificationCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  }
+                }
+              ],
+              "wageLawCoverage": {
+                "wageLawNameCode": {
+                  "codeValue": "_:string*",
+                  "longName": "_:string*"
+                },
+                "coverageCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*"
+                }
+              },
+              "positionID": "string*",
+              "homeOrganizationalUnits": [
+                {
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "typeCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  }
+                }
+              ],
+              "assignedOrganizationalUnits": [
+                {
+                  "nameCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "typeCode": {
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  }
+                }
+              ],
+              "homeWorkLocation": {
+                "address": {
+                  "lineOne": "string*",
+                  "lineTwo": "string*",
+                  "cityName": "string*",
+                  "countrySubdivisionLevel1": {
+                    "subdivisionType": "_:string*",
+                    "codeValue": "_:string*",
+                    "shortName": "_:string*"
+                  },
+                  "countryCode": "string*",
+                  "postalCode": "string*"
+                },
+                "nameCode": {
+                  "codeValue": "_:string*",
+                  "shortName": "_:string*"
+                }
+              },
+              "assignedWorkLocations": [
+                {
+                  "address": {
+                    "nameCode": {
+                      "codeValue": "_:string*",
+                      "shortName": "_:string*",
+                      "longName": "_:string*"
+                    },
+                    "lineOne": "string*",
+                    "lineTwo": "string*",
+                    "cityName": "string*",
+                    "countrySubdivisionLevel1": {
+                      "subdivisionType": "_:string*",
+                      "codeValue": "_:string*",
+                      "shortName": "_:string*"
+                    },
+                    "countrySubdivisionLevel2": {
+                      "subdivisionType": "_:string*",
+                      "codeValue": "_:string*",
+                      "shortName": "_:string*"
+                    },
+                    "countryCode": "string*",
+                    "postalCode": "string*"
+                  }
+                }
+              ],
+              "reportsTo": [
+                {
+                  "positionID": "string*",
+                  "associateOID": "string*",
+                  "workerID": {
+                    "idValue": "_:string*"
+                  },
+                  "reportsToWorkerName": {
+                    "formattedName": "_:string*"
+                  }
+                }
+              ],
+              "payrollProcessingStatusCode": {
+                "shortName": "_:string*"
+              },
+              "payrollGroupCode": "string*",
+              "payrollFileNumber": "string*",
+              "payGradeCode": {
+                "codeValue": "_:string*",
+                "shortName": "_:string*"
+              }
+            }
+      }
     }
+  },
+  "rest": {
+    "config": {
+      "baseUrl": "https://{tenant_id}",
+      "get": {
+        "query_parameters": {},
+        "pagination": {
+          "mode": "skip_take",
+          "path": [],
+          "page_size": "{page_size}",
+          "params": {
+            "$top": "{take_count}",
+            "$skip": "{skip_count}"
+          }
+        }
+      },
+      "authentication": "client_credentials",
+      "call_handling": "generic",
+      "test_connection": {
+        "url": "/hr/v2/worker-demographics?top=1&skip=0"
+      },
+      "socket_timeout": 3600000,
+      "retry": [
+          {
+              "type": "statusCode",
+              "statusCode": 429,
+              "retry": {
+                  "type": "simple",
+                  "maxCount": 12,
+                  "waitTime": 5
+              }
+          },
+          {
+              "type": "statusCode",
+              "statusCode": 500,
+              "retry": {
+                  "type": "simple",
+                  "maxCount": 12,
+                  "waitTime": 5
+              }
+          },
+          {
+              "type": "connectionError"
+          }
+      ]
+    },
+    "authOptions": {
+      "scopes": [],
+      "authUrl": "https://{tenant_id}/auth/oauth/v2/token",
+      "type": "signed-jwt",
+      "postData": {
+        "client_id": {
+          "name": "clientId"
+        },
+        "scope": {
+          "name": "scope"
+        },
+        "client_assertion_type": "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
+        "client_assertion": {
+          "name": "JWT"
+        },
+        "grant_type": "client_credentials"
+      },
+      "JWT": {
+        "aud": {
+          "name": "endpoint"
+        },
+        "exp": {
+          "name": "oneHour"
+        },
+        "iss": {
+          "name": "clientId"
+        },
+        "jti": {
+          "name": "guid"
+        },
+        "nbf": {
+          "name": "now"
+        },
+        "sub": {
+          "name": "clientId"
+        }
+      }
+    }
+  },
+  "connection": {
+    "items": [
+      {
+        "name": "page_size",
+        "type": "textbox",
+        "label": "Page Size",
+        "value": "100"
+      }
+    ]
+  }
 }
