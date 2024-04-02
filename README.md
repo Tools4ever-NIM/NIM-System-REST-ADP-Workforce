@@ -4,10 +4,36 @@
 
 
 ## Data Tables
-TBD
+- worker_assignments
+- worker_assignments_assignedOrganizationalUnits
+- worker_assignments_assignedWorkLocations
+- worker_assignments_homeOrganizationalUnits
+- worker_assignments_occupationalClassifications
+- worker_assignments_reportsTo
+- worker_assignments_workerGroups
+- worker_demographics
+- worker_demographics_businessCommunication_emails
+- worker_demographics_businessCommunication_landlines
+- worker_demographics_businessCommunication_mobiles
+- worker_demographics_customFieldGroup_dateFields
+- worker_demographics_customFieldGroup_stringFields
+- worker_demographics_person_communication_emails
+- worker_demographics_person_communication_mobiles
+- worker_demographics_person_customFieldGroup_codeFields
+- worker_demographics_person_customFieldGroup_dateFields
+- worker_demographics_person_customFieldGroup_indicatorFields
+- worker_demographics_person_customFieldGroup_multiCodeFields
+- worker_demographics_person_customFieldGroup_stringFields
+- worker_demographics_workAssignments
+- worker_demographics_workAssignments_assignedOrganizationalUnits
+- worker_demographics_workAssignments_assignedWorkLocations
+- worker_demographics_workAssignments_homeOrganizationalUnits
+- worker_demographics_workAssignments_occupationalClassifications
+- worker_demographics_workAssignments_reportsTo
+- worker_demographics_workAssignments_workerGroups
 
 ## Actions
-TBD
+N/A
 
 # NIM Docs
 The official NIM documentation can be found at: https://docs.nimsuite.com
